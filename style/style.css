@@ -15,14 +15,27 @@ h2 {
   font-family: "Gugi", cursive;
 }
 
-a {
+#celsius-link {
   font-size: 25px;
   color: #ffff;
   text-decoration: none;
   transition: all 150ms ease-in-out;
 }
 
-a:hover {
+#fahrenheit-link {
+  font-size: 25px;
+  color: #ffff;
+  text-decoration: none;
+  transition: all 150ms ease-in-out;
+}
+
+#celsius-link:hover {
+  cursor: pointer;
+  color: #f9b518;
+  font-size: 35px;
+}
+
+#fahrenheit-link:hover {
   cursor: pointer;
   color: #f9b518;
   font-size: 35px;
@@ -153,4 +166,10 @@ a:hover {
   padding-top: 100px;
   margin: 0 auto;
   font-weight: 500;
+  text-decoration: none;
+}
+
+.code-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
