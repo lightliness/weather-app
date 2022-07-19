@@ -1,0 +1,148 @@
+body {
+  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/038/276/original/mist.jpg?1656018922);
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+  font-size: 25px;
+  font-family: "Gugi", cursive;
+  color: #ffff;
+}
+
+h2 {
+  display: block;
+  font-family: "Gugi", cursive;
+}
+
+a {
+  font-size: 25px;
+  color: #ffff;
+  text-decoration: none;
+  transition: all 150ms ease-in-out;
+}
+
+a:hover {
+  cursor: pointer;
+  color: #f9b518;
+  font-size: 35px;
+}
+
+.container-app {
+  max-width: 750px;
+  min-width: 550px;
+  margin: 0 auto;
+  padding: 25px 60px;
+  box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.3);
+  display: block;
+  border-radius: 4px;
+  margin-top: 80px;
+  background: rgba(0, 0, 0, 0.777);
+}
+
+.form-control {
+  width: 200px;
+}
+
+.search-form {
+  padding-left: 50px;
+  padding-top: 5px;
+  margin-bottom: 0%;
+  width: 700px;
+}
+
+.search-button {
+  border: 1px solid #edf7ff;
+  background: #f3faff;
+  color: rgb(2, 2, 2);
+  width: 80px;
+  height: 38px;
+}
+
+.location-button {
+  border: 1px solid #edf7ff;
+  background: #f3faff;
+  color: rgb(2, 2, 2);
+  width: 150px;
+  height: 38px;
+}
+
+.search {
+  width: 350px;
+}
+
+.current {
+  padding-left: 50px;
+  padding-right: 30px;
+  margin-left: 10px;
+  color: #ffff;
+}
+
+.current-city {
+  font-size: 50px;
+  padding-top: 20px;
+}
+
+.current-temperature {
+  font-size: 35px;
+  padding-top: 33px;
+}
+
+.units {
+  font-size: 25px;
+}
+
+.current-humidity {
+  padding-top: 5px;
+}
+
+.current-image {
+  padding-top: 0;
+}
+
+.row.images {
+  text-align: center;
+  padding-left: 70px;
+}
+
+.week {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 10px;
+  padding-top: 5px;
+  padding-left: 10px;
+  border: white;
+  border-radius: 5px;
+  width: 650px;
+  height: 100px;
+  color: #ffff;
+}
+
+.day {
+  font-family: "Gugi", cursive;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.img {
+  display: inline-block;
+  padding-right: 20px;
+  padding-top: 5px;
+  margin-bottom: 0;
+  width: 100px;
+  height: 100px;
+}
+
+.temperature {
+  display: inline-block;
+}
+
+.creator {
+  text-align: center;
+  font-size: 10px;
+  padding-top: 100px;
+  margin: 0 auto;
+  font-weight: 500;
+  color: #ffff;
+}

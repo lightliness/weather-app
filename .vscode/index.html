@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/097f7d36eb.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+    <title>Weather Forecast</title>
+  </head>
+  <body>
+    <div class="container">
+      <section class="container-app">
+      <h1>Weather Forecast</h1>
+      <div class="row search-form">
+        <form class="row search-form">
+          <div class="col-auto">  
+          <input type="text" id="inputSearch" class="form-control" aria-describedby="searchHelpBlock" placeholder="Type a city..." autocomplete="off">
+          </div>
+          <div class="col-auto">
+          <button class="btn btn-primary search-button" type="submit">Search</button>
+          </div>
+          <div class="col-2">
+          <button class="btn btn-primary location-button" id="locationButton" type="submit">Current Location</button>
+          </div>
+      </form>
+      </div>
+      <br />
+      <section class="current">
+      <div class="row text">
+        <div class="col col-city">
+            <h2 class="current-city" id="city">Kyiv</h2>
+            <div class="current-date" id="date">Thursday 12:30</div>
+            <div class="current-weather" id="description">Clear</div>
+        </div>
+        <div class="col col-temp">
+            <h2 class="temperature current-temperature"><span class="tempNumber currentTemp" id="temperature">15</span><span class="units"><a href="#" id="celsius-link">°C</a>|<a href="#" id="fahrenheit-link">°F</a></span></h2>
+              <div class="current-humidity">Humidity: <span id="humidity">54</span>%</div>
+              <div class="current-wind">Wind: <span id="wind">5</span>km/h</div>
+        </div>
+        <div class="col current-image"><img src="images/clear-day.svg" alt="clear-day"></div>
+        </div>
+        </section>
+        <br />
+        <section class="week">
+        <div class="row images">
+            <div class="col-2 day-one">
+              <div class="day"><strong>Fri</strong></div>
+              <div class="img"><img src="images/clear-day.svg" alt="clear-day"></i></div>
+              <div class="temperature"><span class="tempNumber">17</span><span class="system">°C</span></div>
+            </div>
+            <div class="col-2 day-two">
+              <div class="day"><strong>Sat</strong></div>
+              <div class="img"><img src="images/cloudy.svg" alt="clear-day"></i></div>
+              <div class="temperature"><span class="tempNumber">11</span><span class="system">°C</span></div>
+            </div>
+            <div class="col-2 day-three">
+              <div class="day"><strong>Sun</strong></div>
+              <div class="img"><img src="images/partly-cloudy-day.svg" alt="clear-day"></i></div>
+              <div class="temperature"><span class="tempNumber">14</span><span class="system">°C</span></div>
+            </div>
+            <div class="col-2 day-four">
+              <div class="day"><strong>Mon</strong></div>
+              <div class="img"><img src="images/rain.svg" alt="clear-day"></i></div>
+              <div class="temperature"><span class="tempNumber">12</span><span class="system">°C</span></div>
+            </div>
+            <div class="col-2 day-five">
+              <div class="day"><strong>Tue</strong></div>
+              <div class="img"><img src="images/clear-day.svg" alt="clear-day"></i></div>
+              <div class="temperature"><span class="tempNumber">18</span><span class="system">°C</span></div>
+            </div>
+        </div> 
+        </section>
+        <p class="creator">Coded by Anastasiia Lykhodid</p>
+      </div>
+    </section>
+   
+    </div>
+    <script src="js/index.js"></script>
+  </body>
+</html>
