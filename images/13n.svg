@@ -21,8 +21,4 @@
 		<animateTransform attributeName="transform" type="rotate" additive="sum" values="0 38 45; 360 38 45" dur="9s" repeatCount="indefinite"/>
 		<animate attributeName="opacity" values="0;1;1;1;0" begin="-1s" dur="4s" repeatCount="indefinite"/>
 	</g>
-	<g>
-		<polygon points="30 36 26 48 30 48 28 58 38 44 32 44 36 36 30 36" fill="#f59e0b"/>
-		<animate id="a" attributeName="opacity" values="1;1;1;1;1;1;0.1;1;0.1;1;1;0.1;1;0.1;1" dur="2s" repeatCount="indefinite"/>
-	</g>
 </svg>

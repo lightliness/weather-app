@@ -26,9 +26,9 @@ currentTime.innerHTML = `${day} ${hour}:${minutes}`;
 
 function showWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+
+  tempC = response.data.main.temp;
+  document.querySelector("#temperature").innerHTML = Math.round(tempC);
 
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
@@ -37,6 +37,51 @@ function showWeather(response) {
 
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+
+  let iconElementAPI = response.data.weather[0].icon;
+
+  if (iconElementAPI === "01d") {
+    document.querySelector(".icon").setAttribute("src", `./images/01d.svg`);
+  } else if (iconElementAPI === "02d") {
+    document.querySelector(".icon").setAttribute("src", `./images/02d.svg`);
+  } else if (iconElementAPI === "03d") {
+    document.querySelector(".icon").setAttribute("src", `./images/03d.svg`);
+  } else if (iconElementAPI === "04d") {
+    document.querySelector(".icon").setAttribute("src", `./images//04d.svg`);
+  } else if (iconElementAPI === "09d") {
+    document.querySelector(".icon").setAttribute("src", `./images/09d.svg`);
+  } else if (iconElementAPI === "10d") {
+    document.querySelector(".icon").setAttribute("src", `./images/10d.svg`);
+  } else if (iconElementAPI === "11d") {
+    document.querySelector(".icon").setAttribute("src", `./images/11d.svg`);
+  } else if (iconElementAPI === "13d") {
+    document.querySelector(".icon").setAttribute("src", `./images/13d.svg`);
+  } else if (iconElementAPI === "50d") {
+    document.querySelector(".icon").setAttribute("src", `./images/50d.svg`);
+  } else if (iconElementAPI === "01n") {
+    document.querySelector(".icon").setAttribute("src", `./images/01n.svg`);
+  } else if (iconElementAPI === "02n") {
+    document.querySelector(".icon").setAttribute("src", `./images/02n.svg`);
+  } else if (iconElementAPI === "03n") {
+    document.querySelector(".icon").setAttribute("src", `./images/03n.svg`);
+  } else if (iconElementAPI === "04n") {
+    document.querySelector(".icon").setAttribute("src", `./images/04n.svg`);
+  } else if (iconElementAPI === "09n") {
+    document.querySelector(".icon").setAttribute("src", `./images/09n.svg`);
+  } else if (iconElementAPI === "10n") {
+    document.querySelector(".icon").setAttribute("src", `./images/10n.svg`);
+  } else if (iconElementAPI === "11n") {
+    document.querySelector(".icon").setAttribute("src", `./images/11n.svg`);
+  } else if (iconElementAPI === "13n") {
+    document.querySelector(".icon").setAttribute("src", `./images/13n.svg`);
+  } else if (iconElementAPI === "50n") {
+    document.querySelector(".icon").setAttribute("src", `./images/50n.svg`);
+  }
+
+  document
+    .querySelector(".icon")
+    .setAttribute("alt", response.data.weather[0].description);
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -48,6 +93,11 @@ function searchCity(city) {
 function submit(event) {
   event.preventDefault();
   let city = document.querySelector("#inputSearch").value;
+  if (city.length <= 0) {
+    alert(
+      `Oops, looks like there is no city name... Please, type the city name again 🏙`
+    );
+  }
   searchCity(city);
 }
 
@@ -61,6 +111,32 @@ function currentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(findLocation);
 }
+
+//--------------
+function showFTemp(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#temperature");
+  let tempF = (tempC * 9) / 5 + 32;
+  buttonC.classList.remove("active");
+  buttonF.classList.add("active");
+  tempElement.innerHTML = Math.round(tempF);
+}
+
+let tempC = null;
+
+let buttonF = document.querySelector("#fahrenheit-btn");
+buttonF.addEventListener("click", showFTemp);
+
+function showCTemp(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#temperature");
+  buttonC.classList.add("active");
+  buttonF.classList.remove("active");
+  tempElement.innerHTML = Math.round(tempC);
+}
+
+let buttonC = document.querySelector("#celsius-btn");
+buttonC.addEventListener("click", showCTemp);
 
 let searchForm = document.querySelector("form");
 searchForm.addEventListener("submit", submit);

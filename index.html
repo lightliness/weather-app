@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- CSS only -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -18,77 +17,139 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="style/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
-    <title>Weather Forecast</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Weather App</title>
   </head>
   <body>
+    <div class="bg-img">
     <div class="container">
-      <section class="container-app">
-      <h1>Weather Forecast</h1>
-      <div class="row search-form">
-        <form class="row search-form">
-          <div class="col-auto">  
-          <input type="text" id="inputSearch" class="form-control" aria-describedby="searchHelpBlock" placeholder="Type a city..." autocomplete="off">
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+            <h2>Weather Forecast</h2>
+            <hr />
+          <div class="overview">
+            <form>
+              <div class="row">
+                <div class="col-6">
+                  <input
+                    type="search"
+                    id="inputSearch"
+                    placeholder="Enter a city . . ."
+                    class="form-control search-input"
+                  />
+                </div>
+                <div class="col-2 p-0">
+                  <input
+                    type="submit"
+                    class="btn btn-primary w-100 search-button"
+                    value="Search"
+                  />
+                </div>
+                <div class="col-1 p-0">
+                <input class="btn btn-primary location-button w-80" 
+                id="locationButton" type="submit" value="📍" 
+               title="Current Location" />
+                </div>
+              </div>
+            </form>
+            <div class="weatherInfo">
+              <div class="row">
+                <div class="col-6">
+                  <h1 id="city">Kuala Lumpur</h1>
+                  <ul class="description">
+                    <li><span class="date" id="date">Wednesday 00:00</span>, <span id="description">broken clouds</span></li>
+                    <li>
+                      Humidity:  <span class="number"><strong id="humidity">48</strong>%</span>, 
+                      Wind:  <span class="number"><strong id="wind">3.6</strong>km/h</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-6">
+                  <div class="temperature-container d-flex justify-condent-end">
+                      <div class="float-right">
+                        <span class="weather-temperature" id="temperature">-35</span><span class="units"><a href="#" id="celsius-btn" class="celsius-link" title="convert to Celsius">°C</a><a href="#" id="fahrenheit-btn" class="fahrenheit-link" title="convert to Farhenheit">°F</a></span>
+                      </div>
+                      <img src="images/clear-day.svg" id="icon" class="img-today icon" alt="clear-day" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="weatherForecast row">
+                <div class="col">
+                    <div class="weatehrForecastPreview">
+                        <div class="forecast-day">Thu</div>
+                        <img src="images/partly-cloudy-day.svg" alt="clear-day" class="img icon">
+                        <div class="forecast-temperature">
+                            <strong>
+                            <span class="forecast-temperature-max">30°</span>
+                            <span class="forecast-temperature-min">23°</span>
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="weatehrForecastPreview">
+                        <div class="forecast-day">Fri</div>
+                        <img src="images/partly-cloudy-day.svg" alt="clear-day" class="img icon">
+                        <div class="forecast-temperature">
+                            <strong>
+                            <span class="forecast-temperature-max">30°</span>
+                            <span class="forecast-temperature-min">23°</span>
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="weatehrForecastPreview">
+                        <div class="forecast-day">Sat</div>
+                        <img src="images/partly-cloudy-day.svg" alt="clear-day" class="img icon">
+                        <div class="forecast-temperature">
+                            <strong>
+                            <span class="forecast-temperature-max">30°</span>
+                            <span class="forecast-temperature-min">23°</span>
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="weatehrForecastPreview">
+                        <div class="forecast-day">Sun</div>
+                        <img src="images/partly-cloudy-day.svg" alt="clear-day" class="img icon">
+                        <div class="forecast-temperature">
+                            <strong>
+                            <span class="forecast-temperature-max">30°</span>
+                            <span class="forecast-temperature-min">23°</span>
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="weatehrForecastPreview">
+                        <div class="forecast-day">Mon</div>
+                        <img src="images/partly-cloudy-day.svg" alt="clear-day" class="img icon">
+                        <div class="forecast-temperature">
+                            <strong>
+                            <span class="forecast-temperature-max">30°</span>
+                            <span class="forecast-temperature-min">23°</span>
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
           </div>
-          <div class="col-auto">
-          <button class="btn btn-primary search-button" type="submit">Search</button>
-          </div>
-          <div class="col-2">
-          <button class="btn btn-primary location-button" id="locationButton" type="submit">Current Location</button>
-          </div>
-      </form>
+          <hr />
+        <footer>
+          <a
+            href="https://github.com/lightliness/weather-app.git"
+            target="_blank"
+            class="link"
+            >Open-source code</a
+          >
+          by Anastasiia Lykhodid
+        </footer>
       </div>
-      <br />
-      <section class="current">
-      <div class="row text">
-        <div class="col col-city">
-            <h2 class="current-city" id="city">Kyiv</h2>
-            <div class="current-date" id="date">Thursday 12:30</div>
-            <div class="current-weather" id="description">Clear</div>
-        </div>
-        <div class="col col-temp">
-            <h2 class="temperature current-temperature"><span class="tempNumber currentTemp" id="temperature">15</span><span class="units"><a href="#" id="celsius-link">°C</a>|<a href="#" id="fahrenheit-link">°F</a></span></h2>
-              <div class="current-humidity">Humidity: <span id="humidity">54</span>%</div>
-              <div class="current-wind">Wind: <span id="wind">5</span>km/h</div>
-        </div>
-        <div class="col current-image"><img src="images/clear-day.svg" alt="clear-day"></div>
-        </div>
-        </section>
-        <br />
-        <section class="week">
-        <div class="row images">
-            <div class="col-2 day-one">
-              <div class="day"><strong>Fri</strong></div>
-              <div class="img"><img src="images/clear-day.svg" alt="clear-day"></i></div>
-              <div class="temperature"><span class="tempNumber">17</span><span class="system">°C</span></div>
-            </div>
-            <div class="col-2 day-two">
-              <div class="day"><strong>Sat</strong></div>
-              <div class="img"><img src="images/cloudy.svg" alt="clear-day"></i></div>
-              <div class="temperature"><span class="tempNumber">11</span><span class="system">°C</span></div>
-            </div>
-            <div class="col-2 day-three">
-              <div class="day"><strong>Sun</strong></div>
-              <div class="img"><img src="images/partly-cloudy-day.svg" alt="clear-day"></i></div>
-              <div class="temperature"><span class="tempNumber">14</span><span class="system">°C</span></div>
-            </div>
-            <div class="col-2 day-four">
-              <div class="day"><strong>Mon</strong></div>
-              <div class="img"><img src="images/rain.svg" alt="clear-day"></i></div>
-              <div class="temperature"><span class="tempNumber">12</span><span class="system">°C</span></div>
-            </div>
-            <div class="col-2 day-five">
-              <div class="day"><strong>Tue</strong></div>
-              <div class="img"><img src="images/clear-day.svg" alt="clear-day"></i></div>
-              <div class="temperature"><span class="tempNumber">18</span><span class="system">°C</span></div>
-            </div>
-        </div> 
-        </section>
-        <p class="creator"><a href="https://github.com/lightliness/weather-app.git" class="code-link">Open-source code</a>, by Anastasiia Lykhodid</p>
-      </div>
-    </section>
-   
+    </div>
     </div>
     <script src="js/index.js"></script>
   </body>
