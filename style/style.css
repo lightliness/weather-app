@@ -14,7 +14,6 @@ h2 {
 }
 
 ul {
-  position: fixed;
   text-align: left;
   list-style-type: none;
   padding-left: 0;
@@ -49,29 +48,38 @@ footer {
 }
 
 .bg-img {
-  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/038/276/original/mist.jpg?1656018922);
+  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/038/264/original/purple1.jpg?1656017436);
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
   display: flex;
   align-items: center;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  max-width: 700px;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .weather-app-wrapper {
   max-width: 700px;
-  width: 100%;
+  height: 50%;
   border-radius: 7px;
   padding: 20px;
-  display: block flex;
-  margin-left: 320px;
   box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.3);
   background: rgba(0, 0, 0, 0.777);
+  opacity: 0.8;
+  overflow: hidden;
 }
 
 .search-button {
   border: 1px solid #edf7ff;
   background: #f3faff;
   color: rgb(2, 2, 2);
+  text-align: center;
 }
 
 .location-button {
@@ -95,10 +103,12 @@ footer {
 }
 
 .img-today {
-  width: 200px;
-  height: 200px;
-  left: 10px;
+  max-width: 200px;
+  max-height: 200px;
+  display: flex;
   bottom: 15px;
+  flex-direction: column;
+  right: 5px;
 }
 
 .temperature-container {
@@ -107,13 +117,18 @@ footer {
   text-align: right;
 }
 
+#temperature {
+  font-size: 50px;
+  display: flex right;
+  left: 2px;
+}
+
 .units {
   color: #ffff;
   font-family: "Comfortaa", cursive;
   font-size: 15px;
   position: relative;
-  bottom: 30px;
-  right: 15px;
+  bottom: 29px;
 }
 
 .fahrenheit-link {

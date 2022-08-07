@@ -39,7 +39,7 @@
                     class="form-control search-input"
                   />
                 </div>
-                <div class="col-2 p-0">
+                <div class="col-3 p-0">
                   <input
                     type="submit"
                     class="btn btn-primary w-100 search-button"
@@ -65,80 +65,20 @@
                     </li>
                   </ul>
                 </div>
-                <div class="col-6">
+                <div class="col-3">
                   <div class="temperature-container d-flex justify-condent-end">
                       <div class="float-right">
                         <span class="weather-temperature" id="temperature"></span><span class="units"><a href="#" id="celsius-btn" class="celsius-link" title="convert to Celsius">°C</a><a href="#" id="fahrenheit-btn" class="fahrenheit-link" title="convert to Fahrenheit">°F</a></span>
                       </div>
-                      <img src="images/clear-day.svg" id="icon" class="img-today icon" alt="clear-day" />
+                      <img src="images/clear-day.svg" id="icon" class="img-today" alt="clear-day" />
                   </div>
                 </div>
               </div>
             </div>
-            <div class="weatherForecast row">
-                <div class="col">
-                    <div class="weatehrForecastPreview">
-                        <div class="forecast-day">Thu</div>
-                        <img src="images/partly-cloudy-day.svg" alt="clear-day" class="img icon">
-                        <div class="forecast-temperature">
-                            <strong>
-                            <span class="forecast-temperature-max">30°</span>
-                            <span class="forecast-temperature-min">23°</span>
-                            </strong>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="weatehrForecastPreview">
-                        <div class="forecast-day">Fri</div>
-                        <img src="images/partly-cloudy-day.svg" alt="clear-day" class="img icon">
-                        <div class="forecast-temperature">
-                            <strong>
-                            <span class="forecast-temperature-max">30°</span>
-                            <span class="forecast-temperature-min">23°</span>
-                            </strong>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="weatehrForecastPreview">
-                        <div class="forecast-day">Sat</div>
-                        <img src="images/partly-cloudy-day.svg" alt="clear-day" class="img icon">
-                        <div class="forecast-temperature">
-                            <strong>
-                            <span class="forecast-temperature-max">30°</span>
-                            <span class="forecast-temperature-min">23°</span>
-                            </strong>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="weatehrForecastPreview">
-                        <div class="forecast-day">Sun</div>
-                        <img src="images/partly-cloudy-day.svg" alt="clear-day" class="img icon">
-                        <div class="forecast-temperature">
-                            <strong>
-                            <span class="forecast-temperature-max">30°</span>
-                            <span class="forecast-temperature-min">23°</span>
-                            </strong>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="weatehrForecastPreview">
-                        <div class="forecast-day">Mon</div>
-                        <img src="images/partly-cloudy-day.svg" alt="clear-day" class="img icon">
-                        <div class="forecast-temperature">
-                            <strong>
-                            <span class="forecast-temperature-max">30°</span>
-                            <span class="forecast-temperature-min">23°</span>
-                            </strong>
-                        </div>
-                    </div>
-                </div>
+            <div class="weatherForecast row" id="forecast">
             </div>
-          </div>
-          <hr />
+        </div>
+        <hr />
         <footer>
           <a
             href="https://github.com/lightliness/weather-app.git"
