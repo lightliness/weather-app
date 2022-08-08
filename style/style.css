@@ -120,7 +120,7 @@ footer {
 #temperature {
   font-size: 50px;
   display: flex right;
-  left: 2px;
+  left: 1px;
 }
 
 .units {
@@ -129,6 +129,7 @@ footer {
   font-size: 15px;
   position: relative;
   bottom: 29px;
+  left: 2px;
 }
 
 .fahrenheit-link {

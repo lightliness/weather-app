@@ -34,42 +34,42 @@ function formatDay(timestamp) {
 
 function displayForecast(response) {
   let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (forecastDay, index) {
+  forecast.forEach(function (forecastDay, index) {
     let maxTemp = Math.round(forecastDay.temp.max);
     let minTemp = Math.round(forecastDay.temp.min);
 
-    if (index < 6) {
+    let iconElement = forecastDay.weather[0].icon;
+
+    if (index < 6 && index > 0) {
       forecastHTML =
         forecastHTML +
         `<div class="col">
-              <div class="weatehrForecastPreview">
-              <div class="forecast-day">${formatDay(forecastDay.dt)}</div>
-              <img src="images/${
-                forecastDay.weather[0].icon
-              }.svg" alt="" class="img icon">
-              <div class="forecast-temperature">
-              <strong>
-              <span class="forecast-temperature-max">${maxTemp}°</span>
-              <span class="forecast-temperature-min">${minTemp}°</span>
-              </strong>
-              </div>
-              </div>
+                    <div class="weatehrForecastPreview">
+                    <div class="forecast-day">${formatDay(forecastDay.dt)}</div>
+                    <img src="./images/${iconElement}.svg" alt="" class="forecast-icon" />
+                    <div class="forecast-temperature">
+                    <strong>
+                    <span class="forecast-temperature-max temp">${maxTemp}°</span>
+                    <span class="forecast-temperature-min temp">${minTemp}°</span>
+                    </strong>
+                    </div>
+                    </div>
           </div>`;
     }
   });
 
   forecastHTML = forecastHTML + `</div>`;
-
   forecastElement.innerHTML = forecastHTML;
 }
 
 function getForecast(coordinates) {
   let apiKey = "77dbf80276516e7cdd4c6541fdc947ec";
-  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&apiid=${apiKey}&unit=metric`;
-  axios.get(apiURL).then(displayForecast);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function showWeather(response) {
@@ -143,7 +143,7 @@ function submit(event) {
   let city = document.querySelector("#inputSearch").value;
   if (city.length <= 0) {
     alert(
-      `Oops, looks like there is no city name... Please, type the city name again 🏙`
+      `Oops, looks like there is no city name... Please, type the city name again🔍`
     );
   }
   searchCity(city);
@@ -165,6 +165,10 @@ function showFTemp(event) {
   event.preventDefault();
   let tempElement = document.querySelector("#temperature");
   let tempF = (tempC * 9) / 5 + 32;
+
+  let forTemp = document.querySelector(".temp");
+  forTemp.innerHTML = `${tempF}`;
+
   buttonC.classList.remove("active");
   buttonF.classList.add("active");
   tempElement.innerHTML = Math.round(tempF);
@@ -178,6 +182,10 @@ buttonF.addEventListener("click", showFTemp);
 function showCTemp(event) {
   event.preventDefault();
   let tempElement = document.querySelector("#temperature");
+
+  let forTemp = document.querySelector(".temp");
+  forTemp.innerHTML = `${tempC}`;
+
   buttonC.classList.add("active");
   buttonF.classList.remove("active");
   tempElement.innerHTML = Math.round(tempC);
@@ -186,7 +194,7 @@ function showCTemp(event) {
 let buttonC = document.querySelector("#celsius-btn");
 buttonC.addEventListener("click", showCTemp);
 
-//----------
+//---------
 
 let searchForm = document.querySelector("form");
 searchForm.addEventListener("submit", submit);
