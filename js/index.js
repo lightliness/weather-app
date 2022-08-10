@@ -166,8 +166,8 @@ function showFTemp(event) {
   let tempElement = document.querySelector("#temperature");
   let tempF = (tempC * 9) / 5 + 32;
 
-  let forTemp = document.querySelector(".temp");
-  forTemp.innerHTML = `${tempF}`;
+  let forecastTemp = document.querySelector(".temp");
+  forecastTemp.innerHTML = `${tempF}`;
 
   buttonC.classList.remove("active");
   buttonF.classList.add("active");
@@ -183,8 +183,8 @@ function showCTemp(event) {
   event.preventDefault();
   let tempElement = document.querySelector("#temperature");
 
-  let forTemp = document.querySelector(".temp");
-  forTemp.innerHTML = `${tempC}`;
+  let forecastTemp = document.querySelector(".temp");
+  forecastTemp.innerHTML = `${tempC}`;
 
   buttonC.classList.add("active");
   buttonF.classList.remove("active");

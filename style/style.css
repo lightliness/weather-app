@@ -1,7 +1,7 @@
 h1 {
   display: inline;
   text-align: left;
-  font-size: 50px;
+  font-size: 45px;
   font-family: "Comfortaa", cursive;
   color: #ffff;
 }
@@ -103,12 +103,14 @@ footer {
 }
 
 .img-today {
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 100px;
+  max-height: 100px;
+  position: relative;
+  top: 45px;
   display: flex;
   bottom: 15px;
   flex-direction: column;
-  right: 5px;
+  right: 60px;
 }
 
 .temperature-container {
@@ -118,9 +120,10 @@ footer {
 }
 
 #temperature {
-  font-size: 50px;
+  font-size: 45px;
   display: flex right;
-  left: 1px;
+  position: relative;
+  left: 40px;
 }
 
 .units {
@@ -129,7 +132,7 @@ footer {
   font-size: 15px;
   position: relative;
   bottom: 29px;
-  left: 2px;
+  left: 40px;
 }
 
 .fahrenheit-link {
