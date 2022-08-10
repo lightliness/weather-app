@@ -176,6 +176,8 @@ footer {
   display: block flex;
   text-align: center;
   padding-top: 20px;
+  position: relative;
+  left: 10px;
 }
 
 .img {
